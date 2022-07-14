@@ -1,20 +1,24 @@
 #include <iostream>
-
 using namespace std;
+#include <string.h>
 
-    int string_l(char* str){
-          int i = 0;
-
-           while(*str != '\0') {
-            i++;
-            str++;
-       		 }
-    	return i;
+char* str_concat(char* str1, const char* str2)
+{
+    char* ptr = str1 + strlen(str1);
+     while (*str2 != '\0') {
+        *ptr++ = *str2++;
     }
+     *ptr = '\0';
+    return str1;
+}
+int main()
+{
+    char k[] = "hello";
+    char k1[]="world";
+    cout<<str_concat(k,k1)<<endl;
+      return 0;
+}
 
-	int main(){
 
-    	char k[]="hello";
-   		 cout<<string_l(k)<<endl;
-    return 0;
-}	
+
+
